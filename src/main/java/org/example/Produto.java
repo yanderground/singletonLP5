@@ -5,14 +5,10 @@ class Produto {
     private String nome;
     private double preco;
 
-    private Produto(String nome, double preco) {
-        this.nome = nome;
-        this.preco = preco;
-    }
 
-    public static Produto getInstance(String nome, double preco) {
+    public static Produto getInstance() {
         if (instance == null) {
-            instance = new Produto(nome, preco);
+            instance = new Produto();
         }
         return instance;
     }
@@ -33,8 +29,4 @@ class Produto {
         this.preco = preco;
     }
 
-    public void exibirInformacoes() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Preço: R$" + preco);
-    }
 }
